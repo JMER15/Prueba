@@ -1,6 +1,7 @@
 package josemi;
 
 public class Empleado implements Comparable<Empleado> {
+	private static final int CUARENTA_AÑOS = 40;
 	public String nombre;
 	public String apellido;
 	public int edad;
@@ -37,7 +38,7 @@ public class Empleado implements Comparable<Empleado> {
 	}
 
 	public boolean plus(double sueldoPlus) {
-		if (edad < 40)
+		if (edad < CUARENTA_AÑOS)
 			return false;
 
 		salario += sueldoPlus;
