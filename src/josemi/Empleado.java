@@ -2,16 +2,16 @@ package josemi;
 
 public class Empleado implements Comparable<Empleado> {
 	private static final int CUARENTA_AÑOS = 40;
-	public String nombre;
-	public String apellido;
-	public int edad;
-	public double salario;
+	private String nombre;
+	private String apellido;
+	private int edad;
+	private double salario;
 
 	public Empleado(String nombre, String apellido, int edad, double salario) throws EdadIncorrectaException {
-		this.nombre = nombre;
-		this.apellido = apellido;
+		setNombre(nombre);
+		setApellido(apellido);
 		setEdad(edad);
-		this.salario = salario;
+		setSalario(salario);
 	}
 
 	private void setEdad(int edad) throws EdadIncorrectaException {
@@ -19,6 +19,18 @@ public class Empleado implements Comparable<Empleado> {
 			throw new EdadIncorrectaException("La edad debe ser un valor entre 1 y 100");
 		}
 		this.edad = edad;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
 	}
 
 	public String getNombre() {
@@ -59,5 +71,4 @@ public class Empleado implements Comparable<Empleado> {
 			return 1;
 		return -1; // if(this.edad < other.getEdad()) return 1;
 	}
-
 }
